@@ -73,7 +73,7 @@ public class BattleshipGame {
 	}
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// TODO I want to create Windows or Android GUI for the game
 		
 		int[][] shots; 
 		boolean endGame = false;
