@@ -1,6 +1,6 @@
 package parking;
 /**
- * 
+ * add new comment to head
  * @author Irene Mitin
  *
  */
