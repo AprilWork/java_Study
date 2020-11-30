@@ -19,7 +19,6 @@ public class Boxing {
 	}
 	
 	public static void removeNegative(List<Double> v) {
-		  //for (int n : v) { v.removeIf(i -> n<0);  }
 		//Java Generics and Collections: Speed Up the Java Development Process (p. 23). O'Reilly Media. Kindle Edition. 
 		  for (Iterator<Double> it = v.iterator(); it.hasNext();) {
 			Double k =  it.next(); 
