@@ -1,9 +1,11 @@
-package GenericsBook;
+package genericsStudy;
 
 import java.util.*;
 import java.lang.*;
 
+
 public class Boxing {
+	
 	public static int sum (List<Integer> ints) {
 		  int s = 0;
 		  for (int n : ints) { s += n; }
@@ -33,7 +35,7 @@ public class Boxing {
 		}
 	}
 
-		//Java Generics and Collections: Speed Up the Java Development Process (p. 22). O'Reilly Media. Kindle Edition.
+		
 	
 	public static <T> List<T> toList(T... arr) {
 	//public static <T> List<T> toList(T[] arr) {
@@ -41,8 +43,17 @@ public class Boxing {
 	    for (T elt : arr) list.add(elt);
 	    return list;
 	  }
+	
+	public static void addNumbers(List<? super Integer> list) {
+		for (int i = 1; i <= 10; i++ ) {
+			list.add(i);
+		}
+		
+	}
 
-	//Java Generics and Collections: Speed Up the Java Development Process (p. 23). O'Reilly Media. Kindle Edition. 
+	 
+	
+
 	
 	public static void main(String[] args ) {
 		//Boxing box;
@@ -57,7 +68,7 @@ public class Boxing {
 		System.out.println(db.toString());
 		assert db.toString().equals("[1.0, -2.0, 2.0, 3.0]");
 
-		//Java Generics and Collections: Speed Up the Java Development Process (p. 13). O'Reilly Media. Kindle Edition. 
+		 
 		Boxing.removeNegative(db);
 		//Boxing.removeUniversal(db,0.0);
 		System.out.println(db.toString());
@@ -92,8 +103,13 @@ public class Boxing {
 		//assert ints.size() == 2;
 		System.out.println(str.toString());
 		
+		//List<Integer> num1 = toList(11,12);
+		List<Object> num1 = toList(11,12);
+		addNumbers(num1);
+		System.out.println(num1.toString());
+		
 	}
-		//Java Generics and Collections: Speed Up the Java Development Process (p. 19). O'Reilly Media. Kindle Edition. 
+		 
 	
 
 }
