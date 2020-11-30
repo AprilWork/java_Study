@@ -35,7 +35,7 @@ public class Boxing {
 	}
 
 		
-	
+	@SafeVarargs
 	public static <T> List<T> toList(T... arr) {
 	//public static <T> List<T> toList(T[] arr) {
 	    List<T> list = new ArrayList<T>();
@@ -106,6 +106,26 @@ public class Boxing {
 		List<Object> num1 = toList(11,12);
 		addNumbers(num1);
 		System.out.println(num1.toString());
+		
+		List<EvenNumber> le = new ArrayList<>();
+		List<? extends NaturalNumber> ln = le;
+		List<? super EvenNumber> lse = le;
+		List<? extends EvenNumber> lee = le;
+
+		//ln.add(new NaturalNumber(35));  // compile-time err
+		//lse.add(new NaturalNumber(45)); // compile-time err
+		//lee.add(new EvenNumber(25)); // compile-time err
+		//lee.add(new NaturalNumber(9)); // compile-time err
+		
+		lse.add(new EvenNumber(25));  
+		le.add(new EvenNumber(35));
+		
+		int i = 0;
+		
+		System.out.println("le " + le.get(i).toString());
+		System.out.println("ln " + ln.get(i).toString());
+		System.out.println("lse " + lse.get(i).toString());
+		System.out.println("lee " + lee.get(i).toString());
 		
 	}
 		 
