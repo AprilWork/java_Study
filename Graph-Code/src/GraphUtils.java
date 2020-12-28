@@ -86,7 +86,7 @@ public class GraphUtils {
 				return false;
 			}
 		}
-		System.out.println(true);
+		//System.out.println(true);
 		return true;
 	}
 	
