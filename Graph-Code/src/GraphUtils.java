@@ -87,7 +87,7 @@ public class GraphUtils {
 			}
 		}
 		//System.out.println(true);
-		// comments
+		// comments words
 		return true;
 	}
 	

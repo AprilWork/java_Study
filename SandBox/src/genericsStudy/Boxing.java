@@ -111,11 +111,13 @@ public class Boxing {
 		List<? extends NaturalNumber> ln = le;
 		List<? super EvenNumber> lse = le;
 		List<? extends EvenNumber> lee = le;
+		//List<? super NaturalNumber> lo = le;
 
 		//ln.add(new NaturalNumber(35));  // compile-time err
 		//lse.add(new NaturalNumber(45)); // compile-time err
 		//lee.add(new EvenNumber(25)); // compile-time err
 		//lee.add(new NaturalNumber(9)); // compile-time err
+		//lo.add(new EvenNumber(67));
 		
 		lse.add(new EvenNumber(25));  
 		le.add(new EvenNumber(35));
@@ -126,6 +128,25 @@ public class Boxing {
 		System.out.println("ln " + ln.get(i).toString());
 		System.out.println("lse " + lse.get(i).toString());
 		System.out.println("lee " + lee.get(i).toString());
+		
+		/*
+		 * public static <T> void copy(List<T> dst, List<T> src)
+		 * public static <T> void copy(List<T> dst, List<? extends T> src)
+		 * public static <T> void copy(List<? super T> dst, List<T> src)
+		 * public static <T> void copy(List<? super T> dst, List<? extends T> src)
+		 * 
+		 * The first of these is too restrictive, as it only permits calls 
+		 * when the destination and source have exactly the same type. 
+		 * The remaining three are equivalent for calls that use implicit type parameters, 
+		 * but differ for explicit type parameters. For the example calls above, 
+		 * the second signature works only when the type parameter is Object, 
+		 * the third signature works only when the type parameter is Integer, 
+		 * and the last signature works (as we have seen) for all three type parameters
+		 *  — i.e., Object, Number, and Integer. Always use wildcards where you can in a signature, 
+		 *  since this permits the widest range of calls.
+		 *  
+		 * Java Generics and Collections: Speed Up the Java Development Process (p. 33). O'Reilly Media. Kindle Edition. 
+		 */
 		
 	}
 		 
