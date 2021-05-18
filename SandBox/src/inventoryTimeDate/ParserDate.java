@@ -24,8 +24,8 @@ abstract class ParserDate {
 			file = Path.of(fileStr).getFileName();
 		} catch (InvalidPathException e) {
 			// TODO Auto-generated catch block
-			//System.err.format("IOException: %s%n", e);
-			throw e;
+			System.err.format("IOException: %s%n", e);
+			//throw e;
 			//e.printStackTrace();
 		}
 		
@@ -41,8 +41,8 @@ abstract class ParserDate {
 		        }
 		    }
 		} catch (IOException x) {
-			throw x;
-		    //System.err.format("IOException: %s%n", x);
+			//throw x;
+		    System.err.format("IOException: %s%n", x);
 		}
 	}
 
@@ -61,7 +61,7 @@ abstract class ParserDate {
 			parseFromTXT("ArborDate.txt");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			//e.printStackTrace();
+			e.printStackTrace();
 		}
 	}
 
